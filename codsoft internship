@@ -1,0 +1,61 @@
+def calculator():
+    print("=" * 40)
+    print("      SIMPLE CALCULATOR PROGRAM")
+    print("=" * 40)  
+    try:    
+        num1 = float(input("\nEnter the first number: "))       
+        num2 = float(input("Enter the second number: "))
+        print("\nChoose an operation:")
+        print("1. Addition (+)")
+        print("2. Subtraction (-)")
+        print("3. Multiplication (*)")
+        print("4. Division (/)")
+        print("5. Modulus (%)")
+        print("6. Exponentiation (^)")
+        choice = input("\nEnter your choice (1-6): ")
+        if choice == '1':
+            result = num1 + num2
+            operation = "+"
+            print(f"\n{num1} {operation} {num2} = {result}")
+        elif choice == '2':
+            result = num1 - num2
+            operation = "-"
+            print(f"\n{num1} {operation} {num2} = {result}")    
+        elif choice == '3':
+            result = num1 * num2
+            operation = "*"
+            print(f"\n{num1} {operation} {num2} = {result}")         
+        elif choice == '4':
+            # Check for division by zero
+            if num2 == 0:
+                print("\nError: Division by zero is not allowed!")
+            else:
+                result = num1 / num2
+                operation = "/"
+                print(f"\n{num1} {operation} {num2} = {result:.2f}")                
+        elif choice == '5':
+            result = num1 % num2
+            operation = "%"
+            print(f"\n{num1} {operation} {num2} = {result}")            
+        elif choice == '6':
+            result = num1 ** num2
+            operation = "^"
+            print(f"\n{num1} {operation} {num2} = {result}")            
+        else:
+            print("\nInvalid choice! Please select a number between 1-6.")            
+    except ValueError:
+        print("\nError: Please enter valid numbers!")
+    except Exception as e:
+        print(f"\nAn unexpected error occurred: {e}")  
+    print("\n" + "=" * 40)
+if __name__ == "__main__":
+    calculator()
+    while True:
+        continue_choice = input("\nDo you want to perform another calculation? (yes/no): ").lower()
+        if continue_choice == 'yes' or continue_choice == 'y':
+            calculator()
+        elif continue_choice == 'no' or continue_choice == 'n':
+            print("\nThank you for using the calculator. Goodbye!")
+            break
+        else:
+            print("Please enter 'yes' or 'no'")
