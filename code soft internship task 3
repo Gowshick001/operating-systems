@@ -123,7 +123,7 @@ def search_contacts():
     if results:
         print(f"\n Found {len(results)} contact(s):")
         for i, contact in enumerate(results, 1):
-            print(f"\n{i}. 👤 {contact['name']}")
+            print(f"\n{i}.  {contact['name']}")
             print(f"    Phone: {contact['phone']}")
             print(f"    Email: {contact['email']}")
     else:
@@ -131,7 +131,7 @@ def search_contacts():
 def update_contact():
     """Update an existing contact"""
     if not contacts:
-        print("\n📭 No contacts to update!")
+        print("\n No contacts to update!")
         return
     display_header("UPDATE CONTACT")
     print("\nCurrent contacts:")
@@ -221,7 +221,7 @@ def delete_contact():
 def show_statistics():
     """Display contact statistics"""
     if not contacts:
-        print("\n📭 No contacts to show statistics!")
+        print("\n No contacts to show statistics!")
         return
     display_header("CONTACT STATISTICS")
     total = len(contacts)
